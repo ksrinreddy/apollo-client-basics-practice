@@ -2,6 +2,7 @@ import React from "react";
 import { XCenter90 } from "./styles/SectionCenter.styled";
 import { List, StyledCharactersList } from "./styles/CharactersList.styled";
 import { useCharacters } from "../hooks/useCharacters";
+import { Link } from "react-router-dom";
 
 const CharactersList = () => {
   const { error, loading, data } = useCharacters();
@@ -31,10 +32,10 @@ const CharactersList = () => {
           {data.characters.results.map((character) => {
             const { id, name, image } = character;
             return (
-              <div key={id}>
-                <img src={image} alt="name" />
+              <Link key={id} to={`/${id}`}>
+                <img src={image} alt={name} />
                 <h4>{name}</h4>
-              </div>
+              </Link>
             );
           })}
         </List>

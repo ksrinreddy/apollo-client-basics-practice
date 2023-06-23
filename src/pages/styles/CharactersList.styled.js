@@ -13,4 +13,10 @@ export const List = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+
+  /* Link {
+    h4 {
+      color: #333;
+    }
+  } */
 `;
